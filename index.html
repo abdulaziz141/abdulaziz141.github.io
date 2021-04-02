@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Abdul Aziz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <img src="img/aziz.png" class="rounded">
+        <h1>Abdul Aziz</h1>
+        <p>Industrial Engineering  |    Strategy</p>
+    </div>
+<!--akhir jumbotron-->
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-center">About Me</h2>
+                        <hr>
+                    </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                        <p class="text-justify">My name is Abdul Aziz I was born in Jakarta, May 1, 1997, now I am 23 years old. My last education is bachelor degree of Industrial Engineering at University of Muhammadiyah Jakarta (2021) and I ever studied at BBPLK Bekasi majoring in web programming (2019).I ever work at PPM Al Mizan Islamic Boarding School as the staff personel and interenship at PT. Sonia Industries in maintenance division. 
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-justify">My skills are web programming using php and design the web using html, css, bootstrap, and other templates, drawing objects using autocad both 2D and 3D, compiling documents using Microsoft word, creating formulas using Microsoft excel, creating frameworks using Microsoft Visio, and understanding about industiral concepts such as lean manufacturing, TPM (Total Productive Maintenance), plan inventory management  ect.
+                        </p>
+                    </div>
+            </div>
+        </div>
+      </section>
+<!--akhir about-->
+
+
+
+      <section class="portofolio" id="portofolio">
+            <div class="container">
+                <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="text-center">Portofolio</h2>
+                            <hr>
+                        </div>
+                </div>
+    
+                <div class="row">
+
+                        <div class="col-sm-4">
+                            <h5 class="text-center">CRUD Aplication</h5>
+                            <img src="img/webs.png" class="rounded float-left img-thumbnail" alt="webs">
+                        </div>
+                        <div class="col-sm-4">
+                            <h5 class="text-center">Engineering Drawings</h5>
+                            <img src="img/3ds.png" class="rounded float-left img-thumbnail" alt="3ds">
+                        </div>
+                        <div class="col-sm-4">
+                            <h5 class="text-center">Analytical Thinking</h5>
+                            <img src="img/at.png" class="rounded float-left img-thumbnail" alt="at">
+                        </div>
+                </div>
+            </div>
+          </section>
+<!--akhir portofolio-->
+
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="text-center">Contact</h2>
+                            <p class="text-center">if you interested to my resume, you can contact me for more information by filling in the form bellow</p>
+                           
+                        </div>
+                </div>
+    
+                <div class="row justify-content-center">
+                    <div class="col-sm-8">
+                        
+
+                        <form name="aziz-googlesheet-form">
+                            <div class="form-group">
+                                <label for="nama">Name</label>
+                                <input type="text" class="form-control" id="nama" placeholder="Enter name" name="nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            </div>
+                            
+                            <div class="form-group">
+                                    <label for="pesan">Massage</label>
+                                    <textarea type="textarea" class="form-control" id="pesan" placeholder="Enter massage" maxlength="150" rows="8" name="pesan"></textarea>
+                                </div>
+                            <button type="submit" class="btn btn-primary btn-kirim">Send</button>
+                            <button class="btn btn-warning btn-loading d-none" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Loading...
+                            </button>
+                        </form>
+                    </div>    
+                </div>
+            </div>
+
+        </section>     
+<!--akhir contact-->
+        
+    <footer class="page-footer bg-dark">
+        
+            <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                    <a href=""><img src="img/email.png" class="image" alt="..."></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/abdul-aziz-8509781ab"><img src="img/linkedin.png" class="image" alt="..."></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href=""><img src="img/github.png" class="image" alt="..."></a>
+                </li>
+            </ul>
+
+            <p class="text-center text-white">copyright@2021 | created by: Abdul Aziz</p>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- eksekusi google spreadshet-->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw45JPMhsajQJ13SVOQL4s87U7qisA7DdFCoC0oTZJBvWQbfqtEOXQBlHMkAP1T7q3h/exec';
+        const form = document.forms['aziz-googlesheet-form'];
+
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const myAlert = document.querySelector('.my-alert');
+
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then((response) => {
+                btnLoading.classList.toggle('d-none');
+                btnKirim.classList.toggle('d-none');
+                alert("Terima Kasih, sudah meninggalkan pesan");
+                form.reset();
+                console.log('Success!', response);
+                })
+            .catch(error => console.error('Error!', error.message))
+        });
+    </script>
+    
+      
+</body>
+</html>
